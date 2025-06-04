@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brisbane Music Vibes Festival</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="static/style/styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">MusicFestival</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="create.html">Create Event</a>
+          <a class="nav-link" href="bookings.html">My Bookings</a>
+          <a class="nav-link" href="about.html">About Us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Event Details & Booking -->
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Event Description -->
+      <div class="col-md-6">
+        <h2>Rock Festival 2025</h2>
+        <img src="https://www.queensland.com/content/dam/teq/consumer/global/images/destinations/brisbane/blog-images/2024_BNE_CMCRocks_1.jpg" alt="Brisbane Music Festival" class="img-fluid mb-3">
+        <p>
+          Get ready for an unforgettable experience at the Rock Festival 2025, a one-day celebration of live music, culture, and entertainment! Held in the heart of Brisbane at Riverstage, the Music festival will be performed by the top Australian and international artists.
+        </p>
+        <p>
+          Enjoy live performances, gourmet food stalls, art installations, and more. Don't miss out—book now!
+        </p>
+        <a href="#" class="btn btn-link">Click here for more artist details</a>
+      </div>
+
+      <!-- Booking Form -->
+      <div class="col-md-6">
+        <form>
+          <h4>Personal Information</h4>
+          <div class="row mb-2">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="First Name*" required>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Last Name*" required>
+            </div>
+          </div>
+          <input type="email" class="form-control mb-2" placeholder="Email*" required>
+          <input type="tel" class="form-control mb-2" placeholder="Phone Number*" required>
+
+          <h4>Ticket Selection</h4>
+          <div class="row mb-2">
+            <div class="col">
+              <select class="form-select" required>
+                <option value="">Number of Tickets</option>
+                <option>1</option><option>2</option><option>3</option><option>4+</option>
+              </select>
+            </div>
+            <div class="col">
+              <select class="form-select" required>
+                <option value="">Ticket Type</option>
+                <option>General</option>
+                <option>VIP</option>
+              </select>
+            </div>
+            <div class="col">
+              <select class="form-select" required>
+                <option value="">Number of Roll</option>
+                <option>1</option><option>2</option><option>3</option>
+              </select>
+            </div>
+          </div>
+
+          <h4>Payment Information</h4>
+          <div class="row mb-2">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Cardholder First Name*" required>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Cardholder Last Name*" required>
+            </div>
+          </div>
+          <input type="text" class="form-control mb-2" placeholder="Card Number*" required>
+          <div class="row mb-2">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="MM/YY*" required>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="CVV*" required>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Postal Code*" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Confirm Payment</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Comments Section -->
+    <div class="mt-5">
+      <h4>Comments</h4>
+      <div class="mb-3">
+        <p><strong>Alice:</strong> I went last year—amazing atmosphere and music!</p>
+        <p><strong>Jay:</strong> Can’t wait to go again this year with friends!</p>
+      </div>
+
+      <form>
+        <div class="mb-2">
+          <textarea class="form-control" rows="3" placeholder="Leave a comment..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-secondary">Post Comment</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
