@@ -1,5 +1,5 @@
 from . import db
-from datetime import datetime
+from datetime import datetime, date      
 from flask_login import UserMixin
 
 
@@ -41,9 +41,17 @@ class Event(db.Model):
     bookings = db.relationship('Booking', backref='event')
     comments = db.relationship('Comment', backref='event')
 
+    # Remaining seats
     @property
     def tickets_left(self):
         return self.capacity - self.tickets_sold
+
+    # Change status to SOLD_OUT or INACTIVE
+    def update_status(self):
+        if self.tickets_left == 0:
+            self.status = 'SOLD_OUT'
+        elif self.date < date.today():
+            self.status = 'INACTIVE'
 
     def __repr__(self):
         return "<Event: {}, id: {}>".format(self.title, self.id)
