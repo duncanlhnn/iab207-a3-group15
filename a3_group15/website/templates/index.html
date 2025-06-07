@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Music Fest - Home</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/style/styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">MusicFestival</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav">
+          <a class="nav-link active" href="index.html">Home</a>
+          <a class="nav-link" href="create.html">Create Event</a>
+          <a class="nav-link" href="bookings.html">My Bookings</a>
+          <a class="nav-link" href="aboutus.html" >About Us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container my-5">
+    <h2 class="mb-4">Browse Upcoming Events</h2>
+
+    <!-- Event Categories -->
+    <div class="mb-4">
+      <span class="badge bg-primary me-2">Concerts</span>
+      <span class="badge bg-secondary me-2">Workshops</span>
+      <span class="badge bg-info text-dark me-2">Exhibitions</span>
+      <span class="badge bg-warning text-dark me-2">Community Events</span>
+    </div>
+
+    <!-- Event Cards -->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <!-- Example Event 1 - Open -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://www.queensland.com/content/dam/teq/consumer/global/images/destinations/brisbane/blog-images/2024_BNE_CMCRocks_1.jpg" class="card-img-top" alt="Rock Fest">
+          <div class="card-body">
+            <h5 class="card-title">Rock Festival 2025</h5>
+            <p class="card-text">Live performances from top rock bands!</p>
+            <p><span class="badge bg-success">Open</span></p>
+            <a href="event.html" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example Event 2 - Sold Out -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://www.lmtmusicacademy.co.uk/wp-content/uploads/2024/05/jazz-band-performing.jpg" class="card-img-top" alt="Jazz Night">
+          <div class="card-body">
+            <h5 class="card-title">Jazz Night Downtown</h5>
+            <p class="card-text">Smooth jazz with international artists.</p>
+            <p><span class="badge bg-danger">Sold Out</span></p>
+            <a href="event.html" class="btn btn-outline-secondary disabled">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example Event 3 - Inactive -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://www.telekom.com/resource/image/1083440/landscape_ratio4x3/1296/972/14d495803e7278c018d2f170f12fe4ee/29D846E1F742F6C5A6D65D77D3BB19C7/bi-electronic-beats-en.jpg" class="card-img-top" alt="Electronic Beats">
+          <div class="card-body">
+            <h5 class="card-title">Electronic Beats Night</h5>
+            <p class="card-text">Experience EDM like never before.</p>
+            <p><span class="badge bg-secondary">Inactive</span></p>
+            <a href="event.html" class="btn btn-outline-secondary disabled">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example Event 4 - Cancelled -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://blog.novecore.com/wp-content/uploads/2024/02/what-is-indie-music-1024x682.png" class="card-img-top" alt="Indie Vibes">
+          <div class="card-body">
+            <h5 class="card-title">Indie Vibes</h5>
+            <p class="card-text">An evening of indie music and fun.</p>
+            <p><span class="badge bg-dark">Cancelled</span></p>
+            <a href="event.html" class="btn btn-outline-secondary disabled">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

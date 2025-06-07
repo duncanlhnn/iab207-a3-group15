@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Event - MusicFestival</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="static/style/styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand me-4" href="index.html">MusicFestival</a>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav d-flex flex-row">
+          <li class="nav-item me-3">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link active" href="create.html">Create Event</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link" href="bookings.html">My Bookings</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+        </ul>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Form Content -->
+  <div class="container my-5">
+    <h2 class="mb-4 text-center">Create Event</h2>
+    <form class="row g-4">
+
+      <!-- Image Section -->
+      <div class="col-md-6">
+        <img src="https://www.rl360.com/top10/images/music-festivals/cover-photo.jpg" class="img-fluid rounded mb-3" alt="Event Image Placeholder">
+        <label for="eventImage" class="form-label">Upload Image</label>
+        <input class="form-control" type="file" id="eventImage" accept="image/*">
+      </div>
+
+      <!-- Event Details Section -->
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="eventTitle" class="form-label">Name of the Event*</label>
+          <input type="text" class="form-control" id="eventTitle" placeholder="Event Title" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="eventDescription" class="form-label">Description of the Event*</label>
+          <textarea class="form-control" id="eventDescription" rows="3" placeholder="Describe the event..." required></textarea>
+        </div>
+
+        <div class="mb-3 row">
+          <div class="col-md-4">
+            <label for="eventDate" class="form-label">Date*</label>
+            <input type="date" class="form-control" id="eventDate" required>
+          </div>
+          <div class="col-md-4">
+            <label for="startTime" class="form-label">Start Time</label>
+            <input type="time" class="form-control" id="startTime">
+          </div>
+          <div class="col-md-4">
+            <label for="endTime" class="form-label">End Time</label>
+            <input type="time" class="form-control" id="endTime">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="eventLocation" class="form-label">Location of the Event*</label>
+          <input type="text" class="form-control" id="eventLocation" placeholder="e.g., Brisbane City Hall" required>
+        </div>
+
+        <!-- Price and Tickets -->
+        <div class="mb-3 row">
+          <div class="col-md-4">
+            <label for="ticketPrice" class="form-label">Ticket Price</label>
+            <select id="ticketPrice" class="form-select">
+              <option>$10</option>
+              <option>$20</option>
+              <option>$30</option>
+              <option>$50</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="ticketAmount" class="form-label">Tickets Amount</label>
+            <select id="ticketAmount" class="form-select">
+              <option>0</option>
+              <option>50</option>
+              <option>100</option>
+              <option>200</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Event Status</label><br>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="statusAvailable">
+              <label class="form-check-label" for="statusAvailable">Available</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="statusSoldOut">
+              <label class="form-check-label" for="statusSoldOut">Sold Out</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="statusCancelled">
+              <label class="form-check-label" for="statusCancelled">Cancelled</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="artistInfo" class="form-label">Additional Information of Artists</label>
+          <textarea class="form-control" id="artistInfo" rows="2" placeholder="Artist details, genres, etc."></textarea>
+        </div>
+
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Create Event</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
+
