@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Create Event - MusicFestival</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/styles.css') }}" />
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ url_for('routes.index') }}">MusicFestival</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('routes.index') }}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('routes.create_event') }}">Create Event</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('routes.bookings') }}">My Bookings</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('routes.about') }}">About Us</a></li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto">
+        {% if current_user.is_authenticated %}
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('routes.logout') }}">Logout</a></li>
+        {% else %}
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('routes.login') }}">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('routes.register') }}">Register</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Create Event Form -->
+<div class="container my-5">
+  <h2 class="mb-4 text-center">Create a New Event</h2>
+  <form class="row g-4" method="POST" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+
+<!-- Image Upload Section -->
+<div class="col-md-6">
+  {% if event and event.image %}
+    <img src="{{ url_for('static', filename=event.image) }}" class="img-fluid rounded mb-3" alt="Event Image">
+  {% else %}
+    <img src="https://www.rl360.com/top10/images/music-festivals/cover-photo.jpg" class="img-fluid rounded mb-3" alt="Event Placeholder">
+  {% endif %}
+  {{ form.image.label(class="form-label") }}
+  {{ form.image(class="form-control") }}
+</div>
+
+    <!-- Event Details -->
+    <div class="col-md-6">
+      <div class="mb-3">
+        {{ form.title.label(class="form-label") }}
+        {{ form.title(class="form-control") }}
+      </div>
+
+      <div class="mb-3">
+        {{ form.description.label(class="form-label") }}
+        {{ form.description(class="form-control", rows=3) }}
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-lg-4 col-md-6 mb-3">
+          {{ form.date.label(class="form-label") }}
+          {{ form.date(class="form-control") }}
+        </div>
+        <div class="col-lg-4 col-md-6 mb-3">
+          {{ form.start_time.label(class="form-label") }}
+          {{ form.start_time(class="form-control") }}
+        </div>
+        <div class="col-lg-4 col-md-12 mb-3">
+          {{ form.end_time.label(class="form-label") }}
+          {{ form.end_time(class="form-control") }}
+        </div>
+      </div>
+
+      <div class="mb-3">
+        {{ form.location.label(class="form-label") }}
+        {{ form.location(class="form-control") }}
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6 mb-3">
+          {{ form.ticket_price.label(class="form-label") }}
+          {{ form.ticket_price(class="form-control") }}
+        </div>
+        <div class="col-md-6 mb-3">
+          {{ form.ticket_amount.label(class="form-label") }}
+          {{ form.ticket_amount(class="form-control") }}
+        </div>
+      </div>
+
+      <div class="mb-3">
+        {{ form.status.label(class="form-label") }}
+        {{ form.status(class="form-select") }}
+      </div>
+
+      <div class="mb-3">
+        {{ form.artist_info.label(class="form-label") }}
+        {{ form.artist_info(class="form-control", rows=2) }}
+      </div>
+
+      <div class="d-grid">
+        {{ form.submit(class="btn btn-primary") }}
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3 mt-5">
+  <small>© 2025 MusicFestival. All rights reserved.</small>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
